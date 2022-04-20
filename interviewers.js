@@ -17,7 +17,13 @@ app.get("/interviewers", (req, res) => {
 });
 
 app.post('/interviewers', (req, res) => {
-  res.send("Hello World, from interviewers");
+  const interviewer = req.body;
+
+  console.log(interviewer)
+  interviewers.push(interviewer)
+
+  res.send('Interviewer is added to Interviewers')
+
 });
 
 app.listen(port, () => console.log(`listening on port ${port}`))
